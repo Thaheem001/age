@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <title>Age Calculate | Arsl Thaheem</title>
+  <style>
+    .arsl{
+      margin: 0; padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      background-image: url(sample.gif);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<div class="arsl"></div>
+<body class="bg-success" onload="preload()">
+  <h3 class="text-capitalize text-center bg-primary m-5 p-3 font-weight-bolder text-light rounded border">Calculate
+    Your Age in Year / Month / Days.</h3>
+
+  <div class="container">
+    <form action="">
+      <label for="date" class="d-inline font-weight-bolder text-uppercase">Type Your Date Of Birth</label>
+      <input type="date" name="date" id="date" class="form-control mb-4 mt-2" value="2000-01-01">
+      <input type="button" value="Submit" onclick="mybtn()" class="btn btn-dark btn-block">
+      <input type="reset" value="Clear" class="btn btn-light mt-4 btn-block">
+    </form>
+    <h2 id="box" class="text-center font-weight-bolder text-uppercase bg-primary my-5 p-3 text-light border rounded">
+      your age is <br>
+      Yyyy - month - days</h2>
+      <p class="text-center text-capitalize"><b>Note:</b> There are 29 days in the month of February after every five years! so some of the above days are also included in it. Don't worry.</p>
+  </div>
+
+  <script>
+    function preload(){
+      document.querySelector(".arsl").style.display="none";
+    }
+    function mybtn() {
+      var datval = document.getElementById("date").value;
+      console.log(datval);
+
+      var today = new Date();
+      // var year = today.getFullYear();
+      // var month = today.getMonth() + 1;
+      // var day = today.getDate();
+      // var dat = year + "-" + month + "-" + day;
+      // console.log(dat);
+
+      var rAge = document.getElementById("date").value;
+      var rageDate = new Date(rAge);
+      // var year1 = rageDate.getFullYear();
+      // var month1 = rageDate.getMonth() + 1;
+      // var day1 = rageDate.getDate();
+      // var dat1 = year1 + "-" + month1 + "-" + day1;
+      // console.log(dat1);
+      var a = today - rageDate;
+      var saal = (a / (1000 * 60 * 60 * 24 * 365));
+      console.log(saal);
+      var mah = (saal - Math.floor(saal)) * (12);
+      console.log(mah);
+      var din = (mah - Math.floor(mah)) * (30.41);
+      console.log(din);
+
+
+
+      document.getElementById("box").innerHTML = "Your Age is <br> " + Math.floor(saal) + " Year " + Math.floor(mah) + " Month " + Math.floor(din) + " Days";
+
+    }
+
+  </script>
+
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
