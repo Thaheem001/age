@@ -12,18 +12,32 @@
 
   <title>Age Calculate | Arsl Thaheem</title>
   <style>
-    .arsl{
-      margin: 0; padding: 0;
-      width: 100vw;
+    .arsl {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
       height: 100vh;
       background-color: white;
       background-image: url(sample.gif);
       background-repeat: no-repeat;
       background-position: center;
+      z-index: 999999;
+    }
+
+    footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0%;
+      left: 0%;
+      display: block;
     }
   </style>
 </head>
 <div class="arsl"></div>
+
 <body class="bg-success" onload="preload()">
   <h3 class="text-capitalize text-center bg-primary m-5 p-3 font-weight-bolder text-light rounded border">Calculate
     Your Age in Year / Month / Days.</h3>
@@ -38,12 +52,17 @@
     <h2 id="box" class="text-center font-weight-bolder text-uppercase bg-primary my-5 p-3 text-light border rounded">
       your age is <br>
       Yyyy - month - days</h2>
-      <p class="text-center text-capitalize"><b>Note:</b> There are 29 days in the month of February after every five years! so some of the above days are also included in it. Don't worry.</p>
+    <p class="text-center text-capitalize"><b>Note:</b> There are 29 days in the month of February after every five
+      years! so some of the above days are also included in it. Don't worry.</p>
   </div>
+  <footer class="bg-dark pt-2 pb-0 text-light text-center px-5">
+    <p class="d-block">Copy Right @2021 | Arsl Thaheem <a href="tel:+923445982251">#Contact |</a> <a
+        href="https://www.facebook.com/ThaheemSahab786" target="_blank"> Facebook</a></p>
+  </footer>
 
   <script>
-    function preload(){
-      document.querySelector(".arsl").style.display="none";
+    function preload() {
+      document.querySelector(".arsl").style.display = "none";
     }
     function mybtn() {
       var datval = document.getElementById("date").value;
